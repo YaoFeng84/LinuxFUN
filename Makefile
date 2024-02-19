@@ -18,11 +18,11 @@ SRCS = ./PrintUSB3.cpp \
 # 自动生成目标文件列表
 OBJS = $(SRCS:.cpp=.o)  
   
-# 默认目标  
-all: my_program  
+# 默认生成目标文件名为 PrintUSB3  
+all: PrintUSB3  
   
 # 链接目标文件生成可执行文件  
-my_program: $(OBJS)  
+PrintUSB3: $(OBJS)  
 	$(CXX) $(CXXFLAGS) $(INCLUDE_DIRS) $(LIB_DIRS) -o $@ $^ $(LIBS)  
   
 # 编译规则，为每个.cpp文件生成对应的.o文件  
@@ -31,7 +31,7 @@ my_program: $(OBJS)
   
 # 清理生成的文件  
 clean:  
-	rm -f $(OBJS) my_program  
+	rm -f $(OBJS) PrintUSB3  
   
 # 如果需要，可以添加伪目标来执行特定的任务，比如检查语法  
 .PHONY: check  
